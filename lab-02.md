@@ -123,14 +123,22 @@ de déchets, mais ceux-ci sont moins bien gérés.
 ### Exercise 5
 
 ``` r
-# insert code here
+ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap, y = total_pop)) + geom_point()
 ```
+
+    ## Warning: Removed 10 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](lab-02_files/figure-gfm/plastic-waste-population-total-1.png)<!-- -->
 
 ``` r
-# insert code here
+ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap, y = coastal_pop)) + geom_point()
 ```
 
-Réponse à la question…
+![](lab-02_files/figure-gfm/plastic-waste-population-coastal-1.png)<!-- -->
+
+Les deux graphiques se ressemblent beaucoup, je ne pourrais donc pas
+affirmer qu’une paire de variables a une relation plus forte.
 
 ## Conclusion
 

@@ -85,14 +85,14 @@ ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap, y = mismanaged_plast
 ### Exercise 5
 
 ```{r plastic-waste-population-total}
-# insert code here
+ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap, y = total_pop)) + geom_point()
 ```
 
 ```{r plastic-waste-population-coastal}
-# insert code here
+ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap, y = coastal_pop)) + geom_point()
 ```
 
-Réponse à la question...
+Les deux graphiques se ressemblent beaucoup, je ne pourrais donc pas affirmer qu'une paire de variables a une relation plus forte.
 
 ## Conclusion
 
