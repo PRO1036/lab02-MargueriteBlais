@@ -1,7 +1,7 @@
 ---
 title: "Lab 02 - Plastic waste"
-author: "Votre nom"
-date: "La date"
+author: "Marguerite Blais"
+date: "16 septembre 2025"
 output: github_document
 ---
 
@@ -28,8 +28,12 @@ plastic_waste <- plastic_waste %>%
 ### Exercise 1
 
 ```{r plastic-waste-continent}
-# insert code here
+ ggplot(plastic_waste, aes(x = plastic_waste_per_cap)) +
+    geom_histogram(binwidth = 0.2, fill = "grey") +
+    facet_wrap(~ continent)
 ```
+
+En Afrique, la majorité des pays produit une faible quantité de déchets plastiques par habitant. De plus, la distribution chute rapidement, ce qui laisse penser que peu de pays ont des niveaux plus élevés. Pour ce qui est de l'Asie, sa distribution ressemble à celle de l'Afrique, seulement avec des quantités de déchets un peu plus élevées. Les distribution de l'Europe et de l'Amérique du Nord sont plus étendues, ce qui indique des niveaux plus variés entre les pays. En Océanie, les données sont plutôt concentrées dans la tranche inférieure, ce qui suggère une faible production de déchets plastiques par habitant. Finalement, pour l'Afrique, il est possible de voir une séparation nette entre deux groupes, mais leur niveau de production de déchets reste tout de même relativement faible.
 
 ### Exercise 2
 
