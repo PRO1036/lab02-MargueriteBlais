@@ -38,10 +38,20 @@ En Afrique, la majorité des pays produit une faible quantité de déchets plast
 ### Exercise 2
 
 ```{r plastic-waste-density}
-# insert code here
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap)) +
+     geom_density()
+
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap, color = continent)) +
+    geom_density()
+
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap, fill = continent)) +
+  geom_density()
+
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap, fill = continent)) +
+   geom_density(alpha = 0.3)
 ```
 
-Réponse à la question...
+Le réglage de la couleur et le réglage de la transparence ne se trouvent pas au même endroit, car le réglage de la couleur (color et fill) est lié aux données, et donc, au mapping, alors que le réglage de la transparence (alpha) est lié à une valeur fixe, donc au setting.
 
 ### Exercise 3
 

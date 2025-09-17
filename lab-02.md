@@ -49,10 +49,37 @@ de même relativement faible.
 ### Exercise 2
 
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap)) +
+     geom_density()
 ```
 
-Réponse à la question…
+![](lab-02_files/figure-gfm/plastic-waste-density-1.png)<!-- -->
+
+``` r
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap, color = continent)) +
+    geom_density()
+```
+
+![](lab-02_files/figure-gfm/plastic-waste-density-2.png)<!-- -->
+
+``` r
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap, fill = continent)) +
+  geom_density()
+```
+
+![](lab-02_files/figure-gfm/plastic-waste-density-3.png)<!-- -->
+
+``` r
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap, fill = continent)) +
+   geom_density(alpha = 0.3)
+```
+
+![](lab-02_files/figure-gfm/plastic-waste-density-4.png)<!-- -->
+
+Le réglage de la couleur et le réglage de la transparence ne se trouvent
+pas au même endroit, car le réglage de la couleur (color et fill) est
+lié aux données, et donc, au mapping, alors que le réglage de la
+transparence (alpha) est lié à une valeur fixe, donc au setting.
 
 ### Exercise 3
 
