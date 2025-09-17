@@ -42,9 +42,9 @@ distribution de l’Europe et de l’Amérique du Nord sont plus étendues, ce
 qui indique des niveaux plus variés entre les pays. En Océanie, les
 données sont plutôt concentrées dans la tranche inférieure, ce qui
 suggère une faible production de déchets plastiques par habitant.
-Finalement, pour l’Afrique, il est possible de voir une séparation nette
-entre deux groupes, mais leur niveau de production de déchets reste tout
-de même relativement faible.
+Finalement, pour l’Amérique du Sud, il est possible de voir une
+séparation nette entre deux groupes, mais leur niveau de production de
+déchets reste tout de même relativement faible.
 
 ### Exercise 2
 
@@ -63,14 +63,14 @@ ggplot(plastic_waste, aes(x = plastic_waste_per_cap, color = continent)) +
 ![](lab-02_files/figure-gfm/plastic-waste-density-2.png)<!-- -->
 
 ``` r
-ggplot(plastic_waste, aes(x = plastic_waste_per_cap, fill = continent)) +
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap, fill = continent, color = continent)) +
   geom_density()
 ```
 
 ![](lab-02_files/figure-gfm/plastic-waste-density-3.png)<!-- -->
 
 ``` r
-ggplot(plastic_waste, aes(x = plastic_waste_per_cap, fill = continent)) +
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap, fill = continent, color = continent)) +
    geom_density(alpha = 0.3)
 ```
 
@@ -107,10 +107,18 @@ répartition (ex: les zones de faibles ou de fortes concentrations).
 ### Exercise 4
 
 ``` r
-# insert code here
+ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap, y = mismanaged_plastic_waste_per_cap, color = continent)) + geom_point()
 ```
 
-Réponse à la question…
+![](lab-02_files/figure-gfm/plastic-waste-mismanaged-1.png)<!-- -->
+
+À partir du graphe de dispersion, il est possible de remarquer une
+relation linéaire, et donc, d’affirmer que plus un habitant produit de
+déchets, plus ceux-ci sont mal gérés. De plus, en se fiant à la couleur
+des points, on remarque que l’Amérique du Nord et l’Europe sont les
+continents qui produisent le plus de déchets, mais aussi ceux qui les
+gèrent le mieux. De l’autre côté, l’Afrique et l’Océanie produit moins
+de déchets, mais ceux-ci sont moins bien gérés.
 
 ### Exercise 5
 
