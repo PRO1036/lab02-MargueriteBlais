@@ -117,8 +117,8 @@ relation linéaire, et donc, d’affirmer que plus un habitant produit de
 déchets, plus ceux-ci sont mal gérés. De plus, en se fiant à la couleur
 des points, on remarque que l’Amérique du Nord et l’Europe sont les
 continents qui produisent le plus de déchets, mais aussi ceux qui les
-gèrent le mieux. De l’autre côté, l’Afrique et l’Océanie produit moins
-de déchets, mais ceux-ci sont moins bien gérés.
+gèrent le mieux. De l’autre côté, l’Afrique et l’Océanie produisent
+moins de déchets, mais ceux-ci sont moins bien gérés.
 
 ### Exercise 5
 
@@ -145,5 +145,23 @@ affirmer qu’une paire de variables a une relation plus forte.
 Recréez la visualisation:
 
 ``` r
-# insert code here
+plastic_waste_coastal <- plastic_waste %>% 
+  mutate(coastal_pop_prop = coastal_pop / total_pop) %>%
+  filter(plastic_waste_per_cap < 3)
+ggplot(plastic_waste_coastal, aes(x = coastal_pop_prop, y = plastic_waste_per_cap, color = continent)) +
+geom_point() +                                                                      geom_smooth(method = "lm", se = TRUE, color = "black") +
+     labs( title = "Quantité de déchets plastiques vs Proportion de la population côtière",                                                                  subtitle = "Selon le continent",                                               x = "Proportion de la population côtière (Coastal / total population)",        y = "Nombre de déchets plastiques par habitant")
 ```
+
+    ## `geom_smooth()` using formula = 'y ~ x'
+
+    ## Warning: Removed 10 rows containing non-finite outside the scale range
+    ## (`stat_smooth()`).
+
+    ## Warning: Removed 10 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](lab-02_files/figure-gfm/recreate-viz-1.png)<!-- -->
+
+Plus il y a de la population côtière, plus le nombre de déchets
+plastiques par habitant est élevé.
