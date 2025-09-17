@@ -86,16 +86,23 @@ transparence (alpha) est lié à une valeur fixe, donc au setting.
 Boxplot:
 
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x = continent, y = plastic_waste_per_cap)) +
+         geom_boxplot()
 ```
+
+![](lab-02_files/figure-gfm/plastic-waste-boxplot-1.png)<!-- -->
 
 Violin plot:
 
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x = continent, y = plastic_waste_per_cap)) + geom_violin()
 ```
 
-Réponse à la question…
+![](lab-02_files/figure-gfm/plastic-waste-violin-1.png)<!-- -->
+
+Les violin plots combinent un boxplot avec une courbe de densité, ce qui
+permet de visualiser la forme exacte des données, et donc, leur
+répartition (ex: les zones de faibles ou de fortes concentrations).
 
 ### Exercise 4
 

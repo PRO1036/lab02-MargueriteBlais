@@ -53,21 +53,24 @@ ggplot(plastic_waste, aes(x = plastic_waste_per_cap, fill = continent)) +
 
 Le réglage de la couleur et le réglage de la transparence ne se trouvent pas au même endroit, car le réglage de la couleur (color et fill) est lié aux données, et donc, au mapping, alors que le réglage de la transparence (alpha) est lié à une valeur fixe, donc au setting.
 
+
 ### Exercise 3
 
 Boxplot:
 
 ```{r plastic-waste-boxplot}
-# insert code here
+ggplot(plastic_waste, aes(x = continent, y = plastic_waste_per_cap)) +
+         geom_boxplot()
 ```
 
 Violin plot:
 
 ```{r plastic-waste-violin}
-# insert code here
+ggplot(plastic_waste, aes(x = continent, y = plastic_waste_per_cap)) + geom_violin()
 ```
 
-Réponse à la question...
+Les violin plots combinent un boxplot avec une courbe de densité, ce qui permet de visualiser la forme exacte des données, et donc, leur répartition (ex: les zones de faibles ou de fortes concentrations).
+
 
 ### Exercise 4
 
